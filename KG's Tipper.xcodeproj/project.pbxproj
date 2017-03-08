@@ -14,6 +14,7 @@
 		61AC3C811E6FE20500D2AFAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61AC3C7F1E6FE20500D2AFAA /* LaunchScreen.storyboard */; };
 		61AC3C8C1E6FE20500D2AFAA /* KG_s_TipperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC3C8B1E6FE20500D2AFAA /* KG_s_TipperTests.swift */; };
 		61AC3C971E6FE20500D2AFAA /* KG_s_TipperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC3C961E6FE20500D2AFAA /* KG_s_TipperUITests.swift */; };
+		61F551241E6FE4A9001B62C0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F551231E6FE4A9001B62C0 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		61AC3C921E6FE20500D2AFAA /* KG's TipperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KG's TipperUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61AC3C961E6FE20500D2AFAA /* KG_s_TipperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KG_s_TipperUITests.swift; sourceTree = "<group>"; };
 		61AC3C981E6FE20500D2AFAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61F551231E6FE4A9001B62C0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				61AC3C761E6FE20500D2AFAA /* AppDelegate.swift */,
 				61AC3C781E6FE20500D2AFAA /* ViewController.swift */,
 				61AC3C7A1E6FE20500D2AFAA /* Main.storyboard */,
+				61F551231E6FE4A9001B62C0 /* SettingsViewController.swift */,
 				61AC3C7D1E6FE20500D2AFAA /* Assets.xcassets */,
 				61AC3C7F1E6FE20500D2AFAA /* LaunchScreen.storyboard */,
 				61AC3C821E6FE20500D2AFAA /* Info.plist */,
@@ -193,6 +196,7 @@
 				TargetAttributes = {
 					61AC3C721E6FE20500D2AFAA = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 85MGTY56YM;
 						ProvisioningStyle = Automatic;
 					};
 					61AC3C861E6FE20500D2AFAA = {
@@ -261,6 +265,7 @@
 			files = (
 				61AC3C791E6FE20500D2AFAA /* ViewController.swift in Sources */,
 				61AC3C771E6FE20500D2AFAA /* AppDelegate.swift in Sources */,
+				61F551241E6FE4A9001B62C0 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +415,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 85MGTY56YM;
 				INFOPLIST_FILE = "KG's Tipper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "KG.KG-s-Tipper";
@@ -422,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 85MGTY56YM;
 				INFOPLIST_FILE = "KG's Tipper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "KG.KG-s-Tipper";
@@ -503,6 +510,7 @@
 				61AC3C9D1E6FE20500D2AFAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		61AC3C9E1E6FE20500D2AFAA /* Build configuration list for PBXNativeTarget "KG's TipperTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +519,7 @@
 				61AC3CA01E6FE20500D2AFAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		61AC3CA11E6FE20500D2AFAA /* Build configuration list for PBXNativeTarget "KG's TipperUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +528,7 @@
 				61AC3CA31E6FE20500D2AFAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

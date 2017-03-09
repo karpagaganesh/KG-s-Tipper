@@ -1,4 +1,4 @@
-# KG-s-Tipper
+# KGs-Tipper
 KG's Tipper is a tip calculator application for iOS.
 
 Submitted by: Karpaga Ganesh Patchirajan

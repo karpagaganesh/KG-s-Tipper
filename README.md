@@ -21,6 +21,7 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - Custom tip percentage
+- Disabled paste option to enter bill amount(To prevent Alphabetical entry)
 - Launch Sreen
 
 ## Video Walkthrough

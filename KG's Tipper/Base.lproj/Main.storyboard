@@ -33,10 +33,11 @@
                                         </segments>
                                         <color key="tintColor" red="0.96778296919999995" green="1" blue="0.97084225010000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="GwK-bF-qbQ"/>
+                                            <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="Pjw-Va-yWG"/>
+                                            <action selector="segmentChange:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="VcO-yH-5Gk"/>
                                         </connections>
                                     </segmentedControl>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$" textAlignment="right" minimumFontSize="33" id="Soc-UZ-uju">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$" textAlignment="right" minimumFontSize="33" id="Soc-UZ-uju" customClass="CustomTextField" customModule="KG_s_Tipper" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="17" width="367" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.086182110011577606" green="0.38968351483345032" blue="0.34543183445930481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -51,6 +52,10 @@
                                         <rect key="frame" x="6" y="159" width="363" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" red="0.13400483131408691" green="0.2415195107460022" blue="0.058324255049228668" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="2y6-v4-fHR"/>
+                                            <action selector="customTipSliderChange:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="3Ju-Ju-YUr"/>
+                                        </connections>
                                     </slider>
                                 </subviews>
                                 <color key="backgroundColor" red="0.086182110011577606" green="0.38968351483345032" blue="0.34543183445930481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -75,6 +80,20 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="45Q-M9-ti2">
+                                        <rect key="frame" x="25" y="43" width="15" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6lm-KW-4B1">
+                                        <rect key="frame" x="25" y="112" width="37" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.090233810245990753" green="0.47318142652511597" blue="0.35868021845817566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -94,10 +113,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Settings"/>
+                                <connections>
+                                    <segue destination="O2n-Kd-usO" kind="push" id="2hy-2A-THJ"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="customTipSlider" destination="dKs-Oj-R7V" id="OzX-ld-ukV"/>
                         <outlet property="newBillAmount" destination="Soc-UZ-uju" id="fTC-uo-I8W"/>
                         <outlet property="tipLabel" destination="rly-iG-hvs" id="OQh-Cp-fM0"/>
                         <outlet property="tipPercentageSegment" destination="hbd-s8-J9f" id="0KZ-QZ-Fgx"/>
@@ -112,6 +135,47 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="490.5" y="154.5"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="wjN-FY-FVF">
+            <objects>
+                <viewController id="O2n-Kd-usO" customClass="SettingsViewController" customModule="KG_s_Tipper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QtB-hp-TsF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="qn9-Xk-Bfs">
+                                <rect key="frame" x="8" y="166" width="359" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="10%"/>
+                                    <segment title="15%"/>
+                                    <segment title="20%"/>
+                                    <segment title="25%"/>
+                                </segments>
+                                <color key="tintColor" red="0.086182110011577606" green="0.38968351483345032" blue="0.34543183445930481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="updateDefaultTipPercentage:" destination="O2n-Kd-usO" eventType="primaryActionTriggered" id="oi4-xw-kx2"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Default Tip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RAy-5P-pgX">
+                                <rect key="frame" x="129" y="108" width="116" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wkD-Gp-Rhr"/>
+                    <connections>
+                        <outlet property="defaultTip" destination="qn9-Xk-Bfs" id="A07-mp-QzK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qgx-Ii-9iv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="878.5" y="154.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u1J-xX-Wzk">

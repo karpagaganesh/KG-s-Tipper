@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61072E121E70FF7800F8F824 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61072E111E70FF7800F8F824 /* CustomTextField.swift */; };
 		61AC3C771E6FE20500D2AFAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC3C761E6FE20500D2AFAA /* AppDelegate.swift */; };
 		61AC3C791E6FE20500D2AFAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC3C781E6FE20500D2AFAA /* ViewController.swift */; };
 		61AC3C7C1E6FE20500D2AFAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61AC3C7A1E6FE20500D2AFAA /* Main.storyboard */; };
@@ -14,7 +15,7 @@
 		61AC3C811E6FE20500D2AFAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61AC3C7F1E6FE20500D2AFAA /* LaunchScreen.storyboard */; };
 		61AC3C8C1E6FE20500D2AFAA /* KG_s_TipperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC3C8B1E6FE20500D2AFAA /* KG_s_TipperTests.swift */; };
 		61AC3C971E6FE20500D2AFAA /* KG_s_TipperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC3C961E6FE20500D2AFAA /* KG_s_TipperUITests.swift */; };
-		61F551241E6FE4A9001B62C0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F551231E6FE4A9001B62C0 /* SettingsViewController.swift */; };
+		61F551261E6FEC97001B62C0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F551251E6FEC97001B62C0 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		61072E111E70FF7800F8F824 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		61AC3C731E6FE20500D2AFAA /* KG's Tipper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KG's Tipper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61AC3C761E6FE20500D2AFAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61AC3C781E6FE20500D2AFAA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +50,7 @@
 		61AC3C921E6FE20500D2AFAA /* KG's TipperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KG's TipperUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61AC3C961E6FE20500D2AFAA /* KG_s_TipperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KG_s_TipperUITests.swift; sourceTree = "<group>"; };
 		61AC3C981E6FE20500D2AFAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		61F551231E6FE4A9001B62C0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		61F551251E6FEC97001B62C0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		61AC3C6A1E6FE20500D2AFAA = {
 			isa = PBXGroup;
 			children = (
+				61F551251E6FEC97001B62C0 /* SettingsViewController.swift */,
 				61AC3C751E6FE20500D2AFAA /* KG's Tipper */,
 				61AC3C8A1E6FE20500D2AFAA /* KG's TipperTests */,
 				61AC3C951E6FE20500D2AFAA /* KG's TipperUITests */,
@@ -102,10 +105,10 @@
 				61AC3C761E6FE20500D2AFAA /* AppDelegate.swift */,
 				61AC3C781E6FE20500D2AFAA /* ViewController.swift */,
 				61AC3C7A1E6FE20500D2AFAA /* Main.storyboard */,
-				61F551231E6FE4A9001B62C0 /* SettingsViewController.swift */,
 				61AC3C7D1E6FE20500D2AFAA /* Assets.xcassets */,
 				61AC3C7F1E6FE20500D2AFAA /* LaunchScreen.storyboard */,
 				61AC3C821E6FE20500D2AFAA /* Info.plist */,
+				61072E111E70FF7800F8F824 /* CustomTextField.swift */,
 			);
 			path = "KG's Tipper";
 			sourceTree = "<group>";
@@ -263,9 +266,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61072E121E70FF7800F8F824 /* CustomTextField.swift in Sources */,
 				61AC3C791E6FE20500D2AFAA /* ViewController.swift in Sources */,
 				61AC3C771E6FE20500D2AFAA /* AppDelegate.swift in Sources */,
-				61F551241E6FE4A9001B62C0 /* SettingsViewController.swift in Sources */,
+				61F551261E6FEC97001B62C0 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

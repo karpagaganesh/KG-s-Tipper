@@ -16,12 +16,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var newBillAmount: CustomTextField!
     @IBOutlet weak var customTipSlider: UISlider!
 
-    
     let defaults = UserDefaults.standard
     let tipPercentages = [0.10, 0.15,0.20,0.25]
-     
+    let formatter = NumberFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tipLabel.adjustsFontSizeToFitWidth = true;
+        totalLabel.adjustsFontSizeToFitWidth = true;
+        newBillAmount.adjustsFontSizeToFitWidth = true;
+        
+        formatter.numberStyle = .currency
+        formatter.maximumFractionDigits = 2;
+        formatter.locale = Locale(identifier: Locale.current.identifier)
+
         let defaultTipPercentageSegment = defaults.integer(forKey: "defaultTip")
         tipPercentageSegment.selectedSegmentIndex = defaultTipPercentageSegment
     }
@@ -58,7 +66,12 @@ class ViewController: UIViewController {
         let tip = bill * tipPercentage
         let total = bill + tip
         
-        tipLabel.text = String(format: "$%0.2f", tip)
-        totalLabel.text = String(format: "$%0.2f", total)
+        tipLabel.text = formatCurrency(value: tip)
+        totalLabel.text = formatCurrency(value: total)
+    }
+    
+    func formatCurrency(value: Double) -> String {
+        let result = formatter.string(from: value as NSNumber);
+        return result!;
     }
 }

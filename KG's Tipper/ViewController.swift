@@ -12,32 +12,28 @@ class ViewController: UIViewController {
     let formatter = NumberFormatter()
     let tipPercentages = [0.10, 0.15,0.20,0.25]
     
-    let CUSTOM_SEGMENT_INDEX = 4
-    let CUSTOM_SEGMENT_TITLE = "Custom"
-    let KEY_DEFAULT_TIP = "defaultTip"
-    let SYMBOL_PERCENTAGE = "%"
-    
     @IBAction func onTap(_ sender: Any) {
         view.endEditing(true)
     }
     
     @IBAction func calculateTip(_ sender: AnyObject) {
         let bill = Double(newBillAmount.text!) ?? 0
-        let tipPercentage = tipPercentageSegment.selectedSegmentIndex != CUSTOM_SEGMENT_INDEX ? tipPercentages[tipPercentageSegment.selectedSegmentIndex] : Double(Int(customTipSlider.value))/100
+        let tipPercentage = tipPercentageSegment.selectedSegmentIndex != Constants.Global.CUSTOM_SEGMENT_INDEX
+            ? tipPercentages[tipPercentageSegment.selectedSegmentIndex] : Double(Int(customTipSlider.value))/100
         updateTipAndTotalLabels(bill: bill, tipPercentage: tipPercentage)
     }
     
     @IBAction func customTipSliderChange(_ sender: UISlider) {
         if customTipSlider.value != 0{
-            tipPercentageSegment.selectedSegmentIndex = CUSTOM_SEGMENT_INDEX;
-            setTipPercentageSegmentTitle(title: (String(Int(customTipSlider.value))+SYMBOL_PERCENTAGE), index: CUSTOM_SEGMENT_INDEX)
+            tipPercentageSegment.selectedSegmentIndex = Constants.Global.CUSTOM_SEGMENT_INDEX;
+            setTipPercentageSegmentTitle(title: (String(Int(customTipSlider.value))+Constants.Global.SYMBOL_PERCENTAGE), index: Constants.Global.CUSTOM_SEGMENT_INDEX)
         }
     }
     
     @IBAction func segmentChange(_ sender: UISegmentedControl) {
         customTipSlider.value = 0
-        if(tipPercentageSegment.selectedSegmentIndex != CUSTOM_SEGMENT_INDEX){
-            setTipPercentageSegmentTitle(title: CUSTOM_SEGMENT_TITLE, index: CUSTOM_SEGMENT_INDEX)
+        if(tipPercentageSegment.selectedSegmentIndex != Constants.Global.CUSTOM_SEGMENT_INDEX){
+            setTipPercentageSegmentTitle(title: Constants.Global.CUSTOM_SEGMENT_TITLE, index: Constants.Global.CUSTOM_SEGMENT_INDEX)
         }
     }
     
@@ -57,6 +53,7 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         newBillAmount.becomeFirstResponder()
         tipPercentageSegment.selectedSegmentIndex = getDefaultTipPercentage()
+        calculateTip(self)
     }
     
     private func formatNumberToLocaleCurrency(value: Double) -> String {
@@ -64,7 +61,7 @@ class ViewController: UIViewController {
     }
 
     private func getDefaultTipPercentage() -> Int{
-        return defaults.integer(forKey: KEY_DEFAULT_TIP)
+        return defaults.integer(forKey: Constants.Global.KEY_DEFAULT_TIP)
     }
     
     private func setTipPercentageSegmentTitle(title: String, index: Int){

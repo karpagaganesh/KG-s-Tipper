@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		61072E121E70FF7800F8F824 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61072E111E70FF7800F8F824 /* CustomTextField.swift */; };
+		61921ACA1E7260170021E8BF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61921AC91E7260170021E8BF /* Constants.swift */; };
 		61AC3C771E6FE20500D2AFAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC3C761E6FE20500D2AFAA /* AppDelegate.swift */; };
 		61AC3C791E6FE20500D2AFAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC3C781E6FE20500D2AFAA /* ViewController.swift */; };
 		61AC3C7C1E6FE20500D2AFAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61AC3C7A1E6FE20500D2AFAA /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		61072E111E70FF7800F8F824 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		61921AC91E7260170021E8BF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../Constants.swift; sourceTree = "<group>"; };
 		61AC3C731E6FE20500D2AFAA /* KG's Tipper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KG's Tipper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61AC3C761E6FE20500D2AFAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61AC3C781E6FE20500D2AFAA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +52,7 @@
 		61AC3C921E6FE20500D2AFAA /* KG's TipperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KG's TipperUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61AC3C961E6FE20500D2AFAA /* KG_s_TipperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KG_s_TipperUITests.swift; sourceTree = "<group>"; };
 		61AC3C981E6FE20500D2AFAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		61F551251E6FEC97001B62C0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		61F551251E6FEC97001B62C0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +83,6 @@
 		61AC3C6A1E6FE20500D2AFAA = {
 			isa = PBXGroup;
 			children = (
-				61F551251E6FEC97001B62C0 /* SettingsViewController.swift */,
 				61AC3C751E6FE20500D2AFAA /* KG's Tipper */,
 				61AC3C8A1E6FE20500D2AFAA /* KG's TipperTests */,
 				61AC3C951E6FE20500D2AFAA /* KG's TipperUITests */,
@@ -102,6 +103,8 @@
 		61AC3C751E6FE20500D2AFAA /* KG's Tipper */ = {
 			isa = PBXGroup;
 			children = (
+				61921AC91E7260170021E8BF /* Constants.swift */,
+				61F551251E6FEC97001B62C0 /* SettingsViewController.swift */,
 				61AC3C761E6FE20500D2AFAA /* AppDelegate.swift */,
 				61AC3C781E6FE20500D2AFAA /* ViewController.swift */,
 				61AC3C7A1E6FE20500D2AFAA /* Main.storyboard */,
@@ -266,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61921ACA1E7260170021E8BF /* Constants.swift in Sources */,
 				61072E121E70FF7800F8F824 /* CustomTextField.swift in Sources */,
 				61AC3C791E6FE20500D2AFAA /* ViewController.swift in Sources */,
 				61AC3C771E6FE20500D2AFAA /* AppDelegate.swift in Sources */,

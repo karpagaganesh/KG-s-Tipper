@@ -2,12 +2,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var customTipSlider: UISlider!
+    @IBOutlet weak var newBillAmount: CustomTextField!
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var tipPercentageSegment: UISegmentedControl!
-    @IBOutlet weak var newBillAmount: CustomTextField!
-    @IBOutlet weak var customTipSlider: UISlider!
-
+    @IBOutlet weak var totalLabel: UILabel!
+    
     let defaults = UserDefaults.standard
     let formatter = NumberFormatter()
     let tipPercentages = [0.10, 0.15,0.20,0.25]
@@ -19,6 +19,12 @@ class ViewController: UIViewController {
     
     @IBAction func onTap(_ sender: Any) {
         view.endEditing(true)
+    }
+    
+    @IBAction func calculateTip(_ sender: AnyObject) {
+        let bill = Double(newBillAmount.text!) ?? 0
+        let tipPercentage = tipPercentageSegment.selectedSegmentIndex != CUSTOM_SEGMENT_INDEX ? tipPercentages[tipPercentageSegment.selectedSegmentIndex] : Double(Int(customTipSlider.value))/100
+        updateTipAndTotalLabels(bill: bill, tipPercentage: tipPercentage)
     }
     
     @IBAction func customTipSliderChange(_ sender: UISlider) {
@@ -33,12 +39,6 @@ class ViewController: UIViewController {
         if(tipPercentageSegment.selectedSegmentIndex != CUSTOM_SEGMENT_INDEX){
             setTipPercentageSegmentTitle(title: CUSTOM_SEGMENT_TITLE, index: CUSTOM_SEGMENT_INDEX)
         }
-    }
-    
-    @IBAction func calculateTip(_ sender: AnyObject) {
-        let bill = Double(newBillAmount.text!) ?? 0
-        let tipPercentage = tipPercentageSegment.selectedSegmentIndex != CUSTOM_SEGMENT_INDEX ? tipPercentages[tipPercentageSegment.selectedSegmentIndex] : Double(Int(customTipSlider.value))/100
-        updateTipAndTotalLabels(bill: bill, tipPercentage: tipPercentage)
     }
     
     override func viewDidLoad() {
@@ -58,6 +58,10 @@ class ViewController: UIViewController {
         newBillAmount.becomeFirstResponder()
         tipPercentageSegment.selectedSegmentIndex = getDefaultTipPercentage()
     }
+    
+    private func formatNumberToLocaleCurrency(value: Double) -> String {
+        return formatter.string(from: value as NSNumber)!;
+    }
 
     private func getDefaultTipPercentage() -> Int{
         return defaults.integer(forKey: KEY_DEFAULT_TIP)
@@ -72,9 +76,5 @@ class ViewController: UIViewController {
         let total = bill + tip
         tipLabel.text = formatNumberToLocaleCurrency(value: tip)
         totalLabel.text = formatNumberToLocaleCurrency(value: total)
-    }
-    
-    private func formatNumberToLocaleCurrency(value: Double) -> String {
-        return formatter.string(from: value as NSNumber)!;
     }
 }
